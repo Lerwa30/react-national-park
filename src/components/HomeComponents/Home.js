@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-import ParkCard from "./ParkCard";
+import ParkCard from "../ParkCard";
+import ParkSearch from "./ParkSearch";
 
 const Home = () => {
   const [parks, setParks] = useState([]);
@@ -15,16 +16,19 @@ const Home = () => {
     })
   }, [])
   
-  const ParkDisplay = parks.map((park) => {
+  const DisplayPark = parks.map((park) => {
     console.log(park)
     return (
+      <div>
+        <ParkSearch></ParkSearch>
         <ParkCard key={park.id} park={park} />
+        </div>
     )
   })
 
   return (
     <div>
-        {ParkDisplay}
+        {DisplayPark}
     </div>
   );
 };
