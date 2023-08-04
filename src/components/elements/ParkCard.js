@@ -8,7 +8,7 @@ const ParkCard = (props) => {
       <div>
       <img className={classes.img} src={props.park.images[0].url}></img>
       <h3>{props.park.fullName}, {props.park.states}</h3>
-      <div>{props.park.weatherInfo}</div>
+      <p>{props.park.description}</p>
       </div>
     </div>
   );

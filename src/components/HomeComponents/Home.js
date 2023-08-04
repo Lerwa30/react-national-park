@@ -20,7 +20,7 @@ const Home = () => {
     console.log(park)
     return (
       <div>
-        <ParkSearch key={park.id}  park={park}></ParkSearch>
+        <ParkSearch></ParkSearch>
         <ParkCard park={park} />
         </div>
     )

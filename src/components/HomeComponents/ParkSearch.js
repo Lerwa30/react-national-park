@@ -1,20 +1,26 @@
 import { useState } from "react";
+import axios from "axios";
+import {FaSearch} from "react-icons/fa"
 
-const ParkSearch = (props) => {
-    const [searchInput, setSearchInput] = useState("");
+import ParkCard from "../elements/ParkCard";
+import classes from "./ParkSearch.module.css";
 
-    return (
-        <div>
-            <input 
-                type="text"
-                placeholder="Search for a park!"
-                searchInput={searchInput}
-                onChange={(e) => {
-                    setSearchInput(e.target.value);
-                }}
-                />
-        </div>
-    )
+const ParkSearch = () => {
+  const [input, setInput] = useState("");
+
+  return (
+    <div className={classes.searchbar}>
+        <FaSearch id="search-icon" />
+      <input className={classes.input}
+        type="text"
+        placeholder="Search for a park!"
+        input={input}
+        onChange={(e) => {
+          setInput(e.target.value);
+        }}
+      />
+    </div>
+  );
 };
 
 export default ParkSearch;
