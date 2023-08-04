@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-import ParkCard from "../ParkCard";
+import ParkCard from "../elements/ParkCard";
 import ParkSearch from "./ParkSearch";
 
 const Home = () => {
@@ -20,8 +20,8 @@ const Home = () => {
     console.log(park)
     return (
       <div>
-        <ParkSearch></ParkSearch>
-        <ParkCard key={park.id} park={park} />
+        <ParkSearch key={park.id}  park={park}></ParkSearch>
+        <ParkCard park={park} />
         </div>
     )
   })

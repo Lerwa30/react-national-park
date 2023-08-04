@@ -1,7 +1,8 @@
 import { useState } from "react";
 
-const ParkSearch = () => {
+const ParkSearch = (props) => {
     const [searchInput, setSearchInput] = useState("");
+
     return (
         <div>
             <form>Search</form>
