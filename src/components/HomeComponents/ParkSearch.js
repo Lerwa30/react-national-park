@@ -5,7 +5,14 @@ const ParkSearch = (props) => {
 
     return (
         <div>
-            <form>Search</form>
+            <input 
+                type="text"
+                placeholder="Search for a park!"
+                searchInput={searchInput}
+                onChange={(e) => {
+                    setSearchInput(e.target.value);
+                }}
+                />
         </div>
     )
 };
