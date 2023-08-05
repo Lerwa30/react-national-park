@@ -5,7 +5,7 @@ import classes from './App.module.css'
 import Header from "./components/HeaderComponents/Header";
 import Home from "./components/HomeComponents/Home";
 import Profile from "./components/Profile";
-import Login from "./components/Login";
+import Login from "./components/auth/Login";
 
 function App() {
   return (

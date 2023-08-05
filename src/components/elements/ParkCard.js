@@ -2,7 +2,6 @@ import React from "react";
 import classes from './ParkCard.module.css'
 
 const ParkCard = (props) => {
-  console.log(props.park.images[1].url);
   return (
     <div className={classes.container}>
       <div>
