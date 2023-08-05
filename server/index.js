@@ -3,6 +3,9 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 
+const { sequelize } = require('./utility/database');
+const { User } = require('./models/user');
+
 const { login, register} = require('./controller/auth')
 
 const app = express();
@@ -17,6 +20,9 @@ app.post('/login', login);
 
 
 
+sequelize.sync()
+.then(() => {
+    app.listen(PORT, () => console.log(`server running`))
+})
+.catch(err => console.log(err));
 
-
-app.listen(PORT, () => console.log(`server running`))

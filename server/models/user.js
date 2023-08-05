@@ -10,6 +10,6 @@ User: sequelize.define('User', {
         primaryKey: true
     },
     username: DataTypes.STRING,
-    password: DataTypes.STRING
+    hashedPass: DataTypes.STRING
 })
 };
