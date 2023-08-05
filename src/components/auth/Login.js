@@ -21,8 +21,8 @@ const Login = () => {
       .post(register ? "/register" : "/login", body)
       .then((res) => {
         console.log("AFTER AUTH", res.data);
-        authCtx.login(res.data.token, res.data.exp, res.data.userId);
-      })
+        authCtx.login(res.data.token, res.data.exp, res.data.userId)
+    })
       .catch((err) => {
         console.log(err);
       });

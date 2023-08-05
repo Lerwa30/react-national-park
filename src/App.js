@@ -10,7 +10,7 @@ import Profile from "./components/Profile";
 import Login from "./components/auth/Login";
 
 function App() {
-  const { state } = useContext(AuthContext);
+  const authCtx =  useContext(AuthContext);
 
   return (
     <div className="App">
@@ -19,7 +19,7 @@ function App() {
         <Routes>
           <Route index element={<Home />} />
           <Route path='profile' element={<Profile />} />
-          <Route path='login' element={!state.token ? <Login /> : <Navigate to='/' />} />
+          <Route path='login' element={!authCtx.token ? <Login /> : <Navigate to='/' />} />
 
         </Routes>
       </main>

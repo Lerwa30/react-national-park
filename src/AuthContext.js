@@ -1,69 +1,87 @@
-import { useState, createContext, useReducer, useEffect } from "react";
+import { useState, useEffect, useCallback, createContext } from 'react'
 
-const initialState = {
-  userId: null,
-  token: null,
-  exp: null,
-  username: null,
-};
+let logoutTimer
 
-const AuthContext = createContext();
+const AuthContext = createContext({
+  token: '',
+  login: () => {},
+  logout: () => {},
+  userId: null
+})
+
+const calculateRemainingTime = (exp) => {
+  const currentTime = new Date().getTime()
+  const expTime = exp 
+  const remainingTime = expTime - currentTime
+  return remainingTime
+}
 
 const getLocalData = () => {
-  const storedToken = localStorage.getItem("token");
-  const storedExp = localStorage.getItem("exp");
-  const storedId = localStorage.getItem("userId");
-  const storedName = localStorage.getItem("username");
+  const storedToken = localStorage.getItem('token')
+  const storedExp = localStorage.getItem('exp')
 
-  let remainingTime = storedExp - new Date().getTime();
-  if (remainingTime < 0) {
-    localStorage.clear();
-    return null;
+  const remainingTime = calculateRemainingTime(storedExp)
+
+  if (remainingTime <= 1000 * 60 * 30) {
+    localStorage.removeItem('token')
+    localStorage.removeItem('exp')
+    return null
   }
+
 
   return {
     token: storedToken,
-    exp: storedExp,
-    userId: storedId,
-    username: storedName,
-  };
-};
+    duration: remainingTime,
+  }
+}
 
-const AuthContextProvider = (props) => {
-  const reducer = (state, action) => {
-    switch (action.type) {
-      case "LOGIN":
-        let { token, exp, userId, username } = action.payload;
-        localStorage.setItem("token", token);
-        localStorage.setItem("exp", exp);
-        localStorage.setItem("userId", userId);
-        localStorage.setItem("username", username);
-        return { ...state, token, exp, userId, username };
-      case "LOGOUT":
-        localStorage.clear();
-        return initialState;
-      case "RETURNING_USER":
-        let { token: t, userId: u, exp: e, username: n } = action.payload;
-        return { ...state, token: t, userId: +u, exp: +e, username: n };
-      default:
-        return state;
-    }
-  };
 
-  const [state, dispatch] = useReducer(reducer, initialState);
-  useEffect(() => {
-    let localData = getLocalData();
-    if (localData) {
-        dispatch({ type: "RETURNING_USER", payload: localData});
+
+export const AuthContextProvider = (props) => {
+  const localData = getLocalData()
+  
+  let initialToken
+  if (localData) {
+    initialToken = localData.token
+  }
+
+  const [token, setToken] = useState(initialToken)
+  const [userId, setUserId] = useState(null)
+
+
+  const logout = () => {
+    setToken(null);
+    setUserId(null);
+    localStorage.removeItem('token');
+    localStorage.removeItem('expire');
+
+    if (logoutTimer === true) {
+      clearTimeout(logoutTimer);
     }
-  }, []);
+  }
+
+  const login = (token, expire, userId) => {
+    setToken(token);
+    setUserId(userId);
+    localStorage.setItem('token', token);
+    localStorage.setItem('expire', expire);
+    
+    let remainingTime = calculateRemainingTime(expire);
+    logoutTimer = setTimeout(logout, remainingTime)
+  }
+
+  const contextValue = {
+    token,
+    login,
+    logout, 
+    userId
+  }
 
   return (
-    <AuthContext.Provider value={{ state, dispatch }}>
-        {props.children}
+    <AuthContext.Provider value={contextValue}>
+      {props.children}
     </AuthContext.Provider>
-  );
-};
+  )
+}
 
-export default AuthContext;
-export { AuthContextProvider };
+export default AuthContext
