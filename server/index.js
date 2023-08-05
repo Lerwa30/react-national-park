@@ -5,7 +5,7 @@ const cors = require('cors');
 
 const { sequelize } = require('./utility/database');
 const { User } = require('./models/user');
-
+const { isAuthenticated } = require('./middleware/isAuthenticated');
 const { login, register} = require('./controller/auth')
 
 const app = express();
@@ -13,11 +13,10 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-const { PORT } = process.env
-
 app.post('/register', register);
 app.post('/login', login);
 
+const { PORT } = process.env
 
 
 sequelize.sync()
