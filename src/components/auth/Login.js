@@ -2,6 +2,8 @@ import { useState, useContext } from "react";
 import axios from "axios";
 import AuthContext from "../../authContext";
 
+import classes from './Login.module.css';
+
 const Login = () => {
   const [register, setRegister] = useState(true);
   const [username, setUsername] = useState("");
@@ -29,23 +31,25 @@ const Login = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={submitHandler}>
+    <div className={classes.container}>
+      <form className={classes.form} onSubmit={submitHandler}>
         <input
+          className={classes.input}
           type="text"
           placeholder="username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
         ></input>
         <input
+          className={classes.input}
           type="text"
           placeholder="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         ></input>
-        <button className="form-btn">{register ? "Sign Up" : "Login"}</button>
+        <button className={classes.button}>{register ? "Sign Up" : "Login"}</button>
       </form>
-      <button className="form-btn" onClick={() => setRegister(!register)}>
+      <button className={classes.button} onClick={() => setRegister(!register)}>
         Need to {register ? "Login" : "Sign Up"}?
       </button>
     </div>
