@@ -4,8 +4,8 @@ import classes from './ParkCard.module.css'
 const ParkCard = (props) => {
   return (
     <div className={classes.container}>
-      <div>
-      <img className={classes.img} src={props.park.images[0].url}></img>
+      <div>{props.park.images === undefined ? <span>loading image</span> : 
+      <img className={classes.img} src={props.park.images[0].url}></img>}
       <h3>{props.park.fullName}, {props.park.states}</h3>
       <p>{props.park.description}</p>
       </div>

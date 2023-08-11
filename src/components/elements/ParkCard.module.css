@@ -1,7 +1,8 @@
 .container {
     display: flex;
-    height: 600px;
-    width: 700px;
+    height: 50%;
+    width: 50%;
+    padding: 10px;
     align-items: center;
     text-align: center;
     justify-content: space-between;
@@ -12,8 +13,14 @@
     margin-left: 50vh;
 }
 
+.container span {
+    display: flex;
+    font-size: 70px;
+    align-items: center;
+}
+
 .img {
     border-radius: 15px;
-    height: 50%;
-    width: 80%;
+    height: 50vh;
+    width: 80vh;
 }
