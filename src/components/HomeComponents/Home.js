@@ -12,7 +12,7 @@ const Home = () => {
   useEffect(() => {
     axios
       .get(
-        "https://developer.nps.gov/api/v1/parks?api_key=VmoCKnr0bKehO0P57WIOTJoRumAUoOp65cybqGgR"
+        "https://developer.nps.gov/api/v1/parks?limit=471&api_key=VmoCKnr0bKehO0P57WIOTJoRumAUoOp65cybqGgR"
       )
       .then((res) => {
         console.log(res.data.data);
