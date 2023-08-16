@@ -3,7 +3,7 @@ import { useState } from "react";
 import axios from "axios";
 import { FaSearch } from "react-icons/fa";
 import ParkCard from "../elements/ParkCard";
-import classes from "./ParkSearch.module.css";
+import classes from "./ParkContainer.module.css";
 
 const ParkContainer = ({ parks }) => {
   const [search, setSearch] = useState("");
@@ -21,8 +21,7 @@ const ParkContainer = ({ parks }) => {
     });
 
   return (
-    <div>
-      <h2>Find a Park!</h2>
+    <div className={classes.searchbar}>
       <FaSearch id="search-icon" />
       <input
         className={classes.input}

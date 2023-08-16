@@ -1,16 +1,12 @@
-.searchbar {
+/* .searchbar {
     background-color: white;
     border-radius: 10px;
     height: 2rem;
     padding: 0 15px;
     box-shadow: 0px 0px 8px #ddd;
-    display: flex;
-    align-items: center;
-    margin-left: 50vh;
-    margin-right: 50vh;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
+    
+    
+} */
 
 .input {
     background-color: transparent;
