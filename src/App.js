@@ -8,6 +8,7 @@ import Header from "./components/HeaderComponents/Header";
 import Home from "./components/HomeComponents/Home";
 import Profile from "./components/Profile";
 import Login from "./components/auth/Login";
+import ParkDetails from "./components/elements/ParkDetails";
 
 function App() {
   const authCtx =  useContext(AuthContext);
@@ -20,7 +21,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path='profile' element={<Profile />} />
           <Route path='login' element={!authCtx.token ? <Login /> : <Navigate to='/' />} />
-
+          <Route path='details' element={<ParkDetails />} />
         </Routes>
       </main>
     </div>

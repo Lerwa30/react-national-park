@@ -21,8 +21,8 @@ const Header = () => {
             <h2 className={classes.name}>National Parks</h2>
             <Link to='/'><button className={classes.button}>Home</button></Link>
             <Link to='profile'><button className={classes.button}>Profile</button></Link>
-            <Link to='login'><button className={classes.button}>Login</button></Link>
-            <button onClick={logoutHandler}>Logout</button>
+            <Link to='login'><button className={classes.button}>Login/Register</button></Link>
+            <button className={classes.button} onClick={logoutHandler}>Logout</button>
         </div>
     )
 }
