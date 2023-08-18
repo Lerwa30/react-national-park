@@ -32,7 +32,7 @@ const ParkContainer = ({ parks }) => {
           setSearch(e.target.value);
         }}
       />
-      {search.length > 0 && <div>{parkDisplay}</div>}
+      {search.length > 2 && <div>{parkDisplay}</div>}
     </div>
   );
 };

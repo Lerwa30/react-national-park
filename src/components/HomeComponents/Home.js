@@ -8,6 +8,7 @@ import ParkContainer from "./ParkContainer";
 const Home = () => {
   const [randomPark, setRandomPark] = useState({});
   const [parks, setParks] = useState({});
+  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
     axios
@@ -21,10 +22,18 @@ const Home = () => {
         console.log(res.data.data[index]);
         setParks(res.data.data);
         console.log(parks)
+        
+      }).finally(() => {
+        setIsLoading(false);
       });
   }, []);
 
+  if(isLoading) {
+    return <>Loading...</>
+  };
+
   return (
+    !isLoading && 
     <div>
       <ParkContainer parks={parks} />
       <ParkCard park={randomPark} />
