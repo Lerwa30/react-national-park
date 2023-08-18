@@ -17,7 +17,7 @@ const Home = () => {
       )
       .then((res) => {
         console.log(res.data.data);
-        const index = Math.floor(Math.random() * 50);
+        const index = Math.floor(Math.random() * 472);
         setRandomPark(res.data.data[index]);
         console.log(res.data.data[index]);
         setParks(res.data.data);

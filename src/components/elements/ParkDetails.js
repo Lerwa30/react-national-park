@@ -1,13 +1,13 @@
 import React from "react";
 import { useState, useEffect } from "react";
 
-const ParkDetails = (props) => {
+const ParkDetails = ({parks}) => {
     return (
         <div>
-          <div>{props.park.images === undefined ? <span></span> : 
-          <img src={props.park.images[1].url}></img>}
-          <h3>{props.park.fullName} {props.park.states}</h3>
-          <p>{props.park.description}</p>
+          <div>{parks.images === undefined ? <span></span> : 
+          <img src={parks.images[1].url}></img>}
+          <h3>{parks.fullName} {parks.states}</h3>
+          <p>{parks.description}</p>
           </div>
         </div>
       );
