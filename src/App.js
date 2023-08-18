@@ -19,9 +19,9 @@ function App() {
       <main>
         <Routes>
           <Route index element={<Home />} />
-          <Route path='profile' element={<Profile />} />
-          <Route path='login' element={!authCtx.token ? <Login /> : <Navigate to='/' />} />
-          <Route path='details' element={<ParkDetails />} />
+          <Route path='/profile' element={<Profile />} />
+          <Route path='/login' element={!authCtx.token ? <Login /> : <Navigate to='/' />} />
+          <Route path='/details/:code' element={<ParkDetails />} />
         </Routes>
       </main>
     </div>

@@ -1,13 +1,25 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import axios from "axios";
 
-const ParkDetails = ({parks}) => {
+const ParkDetails = () => {
+  const { code } = useParams();
+  const [park, setPark] = useState({});
+
+  useEffect(() => {
+    axios.get(`https://developer.nps.gov/api/v1/parks?parkCode=${code}&api_key=VmoCKnr0bKehO0P57WIOTJoRumAUoOp65cybqGgR`).then((res) => {
+      setPark(res.data.data[0]);
+      console.log(res.data.data[0]);
+    });
+  }, []);
+
     return (
         <div>
-          <div>{parks.images === undefined ? <span></span> : 
-          <img src={parks.images[1].url}></img>}
-          <h3>{parks.fullName} {parks.states}</h3>
-          <p>{parks.description}</p>
+          <div>{park.images === undefined ? <span></span> : 
+          <img src={park.images[1].url}></img>}
+          <h3>{park.fullName} {park.states}</h3>
+          <p>{park.description}</p>
           </div>
         </div>
       );

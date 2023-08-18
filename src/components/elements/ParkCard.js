@@ -5,7 +5,8 @@ import { Link } from "react-router-dom";
 
 const ParkCard = ({park}) => {
   const image = park.images[0].url;
-
+  
+  console.log(park)
 
   return (
     <div className={classes.container}>
@@ -13,7 +14,7 @@ const ParkCard = ({park}) => {
       <img className={classes.img} src={image} alt='no img'/>}
       <h3>{park.fullName} {park.states}</h3>
       <p>{park.description}</p>
-      <Link to='/details'><button>View Details</button></Link>
+      <Link to={`/details/${park.parkCode}`}><button>View Details</button></Link>
       </div>
     </div>
   );
