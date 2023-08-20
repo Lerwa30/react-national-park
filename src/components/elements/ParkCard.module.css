@@ -9,7 +9,8 @@
     padding: 10px;
     box-sizing: border-box;
     margin-bottom: 200px;
-    /* background-color: lightgreen; */
+    
+    
 }
 
 .img_container {
@@ -21,10 +22,22 @@
     height: 100%;
     width: 100%;
     object-fit: cover;
-    border-radius: 3px 3px 0px 0px;
+    border-radius: 5px;
 }
 
 .description {
-    font-size: 16px;
-    /* background-color: lightgreen; */
+    font-size: 14px;
+   
+}
+
+.button {
+    border: none;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+.button:hover {
+    text-decoration: underline;
+    color: green;
+    border-color: green;
 }

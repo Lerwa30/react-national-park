@@ -19,3 +19,7 @@ background: linear-gradient(3deg, rgba(121,185,103,1) 0%, rgba(105,183,113,1) 24
     
 }
 
+.button:hover {
+    text-decoration: underline;
+}
+
