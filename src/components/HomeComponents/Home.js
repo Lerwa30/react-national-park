@@ -4,6 +4,7 @@ import axios from "axios";
 import ParkCard from "../elements/ParkCard";
 import ParkDetails from "../elements/ParkDetails";
 import ParkContainer from "./ParkContainer";
+import classes from './ParkContainer.module.css'
 
 const Home = () => {
   const [randomPark, setRandomPark] = useState({});
@@ -36,8 +37,10 @@ const Home = () => {
     !isLoading && 
     <div>
       <ParkContainer parks={parks} />
+      <div className={classes.container}>
       <ParkCard park={randomPark} />
-      
+      </div>
+
     </div>
   );
 };
