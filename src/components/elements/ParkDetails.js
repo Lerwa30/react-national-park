@@ -3,9 +3,11 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
+import classes from './ParkDetails.module.css';
+
 const ParkDetails = () => {
   const { code } = useParams();
-  const [park, setPark] = useState({});
+  const [park, setPark] = useState([]);
 
   useEffect(() => {
     axios.get(`https://developer.nps.gov/api/v1/parks?parkCode=${code}&api_key=VmoCKnr0bKehO0P57WIOTJoRumAUoOp65cybqGgR`).then((res) => {
@@ -15,11 +17,13 @@ const ParkDetails = () => {
   }, []);
 
     return (
-        <div>
+        <div className={classes.container}>
           <div>{park.images === undefined ? <span></span> : 
-          <img src={park.images[1].url}></img>}
+          <img className={classes.img} src={park.images[1].url}></img>}
           <h3>{park.fullName} {park.states}</h3>
           <p>{park.description}</p>
+          <p>{park.directionsInfo}</p>
+          
           </div>
         </div>
       );

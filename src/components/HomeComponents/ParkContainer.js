@@ -7,9 +7,9 @@ import classes from "./ParkContainer.module.css";
 
 const ParkContainer = ({ parks }) => {
   const [search, setSearch] = useState("");
-  console.log(parks)
+  console.log(parks);
 
-  const arr = Object.values(parks)
+  const arr = Object.values(parks);
   const parkDisplay = arr
     .filter((park, index) => {
       let name = park.fullName.toLowerCase();
@@ -21,19 +21,24 @@ const ParkContainer = ({ parks }) => {
     });
 
   return (
-    <div className={classes.searchbar}>
-      <FaSearch id="search-icon" />
-      <input
-        className={classes.input}
-        type="text"
-        placeholder="Search for a park!"
-        value={search}
-        onChange={(e) => {
-          setSearch(e.target.value);
-        }}
-      />
-      {search.length > 2 && <div>{parkDisplay}</div>}
-    </div>
+    <section className={classes.section}>
+      <div className={classes.searchbar}>
+        <FaSearch size="1em" id="search-icon" />
+        <input
+          className={classes.input}
+          type="text"
+          placeholder="Search for a park!"
+          value={search}
+          onChange={(e) => {
+            setSearch(e.target.value);
+          }}
+        />
+        </div>
+        {search.length > 2 && (
+          <div className={classes.container}>{parkDisplay}</div>
+        )}
+    
+    </section>
   );
 };
 
