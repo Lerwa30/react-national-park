@@ -35,11 +35,27 @@ const ParkDetails = () => {
             <p>{park.description}</p>
           </div>
         </section>
+        <h4>Directions to the Park:</h4>
         <section className={classes.directions}>
-        <p>{park.directionsInfo}</p>
-        <a href={park.directionsUrl}>Directions</a>
+          <p>{park.directionsInfo}</p>
+          <a href={park.directionsUrl}>
+            Click here for detailed NPS directions
+          </a>
         </section>
         <p>{park.weatherInfo}</p>
+        {park.activities === undefined ? (
+          <span></span>
+        ) : (
+          <p>
+            {park.activities.map((item) => {
+              return (
+                <ul>
+                  <li>{item.name}</li>
+                </ul>
+              );
+            })}
+          </p>
+        )}
       </div>
     </div>
   );
