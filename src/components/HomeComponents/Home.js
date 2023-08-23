@@ -38,6 +38,7 @@ const Home = () => {
     <div>
       <ParkContainer parks={parks} />
       <div className={classes.container}>
+      <h2>Park Spotlight:</h2>  
       <ParkCard park={randomPark} />
       </div>
 

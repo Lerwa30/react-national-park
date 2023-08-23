@@ -18,7 +18,7 @@ const Header = () => {
 
     return (
         <div className={classes.header}>
-            <h2 className={classes.name}>National Parks</h2>
+            <h2 className={classes.name}>Park Finder</h2>
             <Link to='/'><button className={classes.button}>Home</button></Link>
             <Link to='profile'><button className={classes.button}>Profile</button></Link>
             <Link to='login'><button className={classes.button}>Login/Register</button></Link>
