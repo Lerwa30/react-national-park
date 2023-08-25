@@ -67,7 +67,7 @@ const AltParkContainer = ({ parks }) => {
     "WY",
   ];
 
-  const [selectedState, setSelectedState] = useState("");
+  const [selectedState, setSelectedState] = useState(null);
 
   console.log(parks);
 
