@@ -41,7 +41,7 @@ const Home = () => {
       {/* <ParkContainer parks={parks} /> */}
       <div className={classes.container}>
       <h2>Park Spotlight:</h2>  
-      {!(<AltParkContainer />) && <ParkCard park={randomPark} />}
+      <ParkCard park={randomPark} />
       </div>
 
     </div>

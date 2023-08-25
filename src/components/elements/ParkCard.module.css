@@ -8,8 +8,7 @@
     justify-content: space-between;
     padding: 10px;
     box-sizing: border-box;
-    margin-bottom: 250px;
-    
+    margin-bottom: 250px;  
     
 }
 
@@ -41,3 +40,8 @@
     color: green;
     border-color: green;
 }
+
+.states {
+    overflow-wrap: break-word;
+}
+

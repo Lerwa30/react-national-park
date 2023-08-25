@@ -17,7 +17,8 @@ const ParkCard = ({ park }) => {
         )}
         <h3>
           {park.fullName}
-          <br />
+        </h3>  
+        <h3 className={classes.states}>  
           {park.states}
         </h3>
         <p className={classes.description}>{park.description}</p>

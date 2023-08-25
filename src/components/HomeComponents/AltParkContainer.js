@@ -94,7 +94,7 @@ const AltParkContainer = ({ parks }) => {
             setSelectedState(e.target.value);
           }}
         >
-          <option value="">Select a State</option>
+          <option value={null}>Select a State</option>
 
           {stateArr.map((state, index) => {
             return <option value={state}>{state}</option>;
