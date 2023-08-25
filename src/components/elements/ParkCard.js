@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const ParkCard = ({ park }) => {
   console.log(park);
 
-  const imageUrl = park.images[0] && park.images[0].url ? park.images[0].url : null; //
+  const imageUrl = park.images[0] && park.images[0].url ? park.images[0].url : null; //allows test of images before container renders
 
   return (
     <div className={classes.park_card}>
