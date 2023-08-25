@@ -12,6 +12,17 @@
     
 }
 
+.span_container {
+    height: 300px;
+    width: 300px;
+}
+
+span {
+    display: flex;
+    flex-direction: column;
+    padding-top: 40%;
+}
+
 .img_container {
     height: 300px;
     width: 300px;

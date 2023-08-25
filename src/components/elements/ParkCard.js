@@ -12,8 +12,8 @@ const ParkCard = ({ park }) => {
       <div className={classes.img_container}>
         {imageUrl ? (
           <img className={classes.img} src={imageUrl} alt='no img' loading='lazy' />
-        ) : (
-          <span>No Image Available</span>
+        ) : (<div className={classes.span_container}>
+          <span>No Image Available</span></div>
         )}
         <h3>
           {park.fullName}
