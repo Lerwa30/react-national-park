@@ -4,6 +4,7 @@ import axios from "axios";
 import ParkCard from "../elements/ParkCard";
 import ParkDetails from "../elements/ParkDetails";
 import ParkContainer from "./ParkContainer";
+import AltParkContainer from "./AltParkContainer";
 import classes from './ParkContainer.module.css'
 
 const Home = () => {
@@ -36,7 +37,8 @@ const Home = () => {
   return (
     !isLoading && 
     <div>
-      <ParkContainer parks={parks} />
+      <AltParkContainer parks={parks} />
+      {/* <ParkContainer parks={parks} /> */}
       <div className={classes.container}>
       <h2>Park Spotlight:</h2>  
       <ParkCard park={randomPark} />
