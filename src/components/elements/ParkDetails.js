@@ -21,42 +21,46 @@ const ParkDetails = () => {
   }, []);
 
   return (
-    <div className={classes.container}>
-      <div>
-        <section className={classes.header}>
-          {park.images === undefined ? (
-            <span></span>
-          ) : (
-            <img className={classes.img} src={park.images[1].url}></img>
-          )}
-          <div className={classes.about}>
-            <h3>{park.fullName}</h3>
-            <h3>{park.states}</h3>
-            <p>{park.description}</p>
-          </div>
-        </section>
-        <h4>Directions to the Park:</h4>
-        <section className={classes.directions}>
-          <p>{park.directionsInfo}</p>
-          <a href={park.directionsUrl}>
-            Click here for detailed NPS directions
-          </a>
-        </section>
-        <p>{park.weatherInfo}</p>
-        {park.activities === undefined ? (
-          <span></span>
-        ) : (
-          <p>
-            {park.activities.map((item) => {
-              return (
-                <ul>
-                  <li>{item.name}</li>
-                </ul>
-              );
-            })}
-          </p>
-        )}
+    <div>
+      {park.images === undefined ? (
+        <span></span>
+      ) : (
+        <div
+          className={classes.img}
+          style={{
+            background: `linear-gradient(
+                190deg,
+                rgba(0, 0, 0, 0.8),
+                rgba(0, 0, 0, 0.2)),
+                url(${park.images[1].url})`,
+            backgroundSize: "cover",
+          }}
+        >
+      <div className={classes.about}>
+        <h2>{park.fullName}</h2>
+        <h3>{park.states}</h3>
       </div>
+      </div>)}
+      <p>{park.description}</p>
+      <h4>Directions to the Park:</h4>
+      <section className={classes.directions}>
+        <p>{park.directionsInfo}</p>
+        <a href={park.directionsUrl}>Click here for detailed NPS directions</a>
+      </section>
+      <p>{park.weatherInfo}</p>
+      {park.activities === undefined ? (
+        <span></span>
+      ) : (
+        <p>
+          {park.activities.map((item) => {
+            return (
+              <ul>
+                <li>{item.name}</li>
+              </ul>
+            );
+          })}
+        </p>
+      )}
     </div>
   );
 };
