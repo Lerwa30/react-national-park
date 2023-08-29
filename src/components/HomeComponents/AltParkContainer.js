@@ -87,14 +87,15 @@ const AltParkContainer = ({ parks }) => {
   return (
     <section className={classes.section}>
       <div className={classes.searchbar}>
-        <FaSearch size="1em" id="search-icon" />
+        {/* <FaSearch size="1em" id="search-icon" /> */}
         <select
+          className={classes.dropdown}  
           value={selectedState}
           onChange={(e) => {
             setSelectedState(e.target.value);
           }}
         >
-          <option value={null}>Select a State</option>
+          <option value={null}>Find a National Park by State</option>
 
           {stateArr.map((state, index) => {
             return <option value={state}>{state}</option>;

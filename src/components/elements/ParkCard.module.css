@@ -9,6 +9,7 @@
     padding: 10px;
     box-sizing: border-box;
     margin-bottom: 250px;  
+    border: solid black;
     
 }
 
@@ -54,5 +55,7 @@ span {
 
 .states {
     overflow-wrap: break-word;
+    font-size: 18px;
+    letter-spacing: .05em;
 }
 
