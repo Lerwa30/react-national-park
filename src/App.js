@@ -1,7 +1,7 @@
 import React from "react";
 import { useContext } from "react";
 import { Route, Routes, Navigate } from "react-router-dom";
-import classes from './App.module.css'
+import classes from './App.module.css';
 
 import AuthContext from "./authContext";
 import Header from "./components/HeaderComponents/Header";
@@ -14,9 +14,9 @@ function App() {
   const authCtx =  useContext(AuthContext);
 
   return (
-    <div className="App">
+    <div>
       <Header />
-      <main>
+      <main className={classes.app}>
         <Routes>
           <Route index element={<Home />} />
           <Route path='/profile' element={<Profile />} />

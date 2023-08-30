@@ -9,15 +9,18 @@
     padding: 10px;
     box-sizing: border-box;
     margin-bottom: 250px;  
+    color: whitesmoke;
+    padding-top: 0;
 }
 
 .park_border {
-    border: solid 2px black;
-    border-radius: 20px;
-    padding: 25px;
-    background: rgb(121,185,103);
-background: linear-gradient(3deg, rgba(121,185,103,1) 0%, rgba(105,183,113,1) 24%, rgba(218,232,188,1) 100%);
-
+    border: transparent 2px black;
+    border-radius: 5px;
+    /* padding: 5px; */
+    /* background: rgb(121,185,103);
+background: linear-gradient(3deg, rgba(121,185,103,1) 100%, rgba(105,183,113,1) 24%, rgba(218,232,188,1) 0%); */
+background-color: rgb(109, 146, 109);   
+    padding: 20px;
 }
 
 .span_container {
@@ -45,7 +48,7 @@ span {
 
 .description {
     font-size: 14px;
-   
+   color: whitesmoke;
 }
 
 .button {
@@ -53,7 +56,7 @@ span {
     background-color: transparent;
     text-decoration: underline;
     margin-top: 30px;
-
+    color: whitesmoke;
 }
 
 .button:hover {
@@ -66,5 +69,6 @@ span {
     overflow-wrap: break-word;
     font-size: 18px;
     letter-spacing: .05em;
+    color: whitesmoke;
 }
 

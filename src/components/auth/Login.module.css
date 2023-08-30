@@ -3,7 +3,7 @@
   background-size: cover;
   height: 90vh;
   margin: 0;
-  background-color: rgb(3, 52, 52);
+  background-color: rgb(9, 115, 115);
 }
 
 .container {
@@ -44,6 +44,6 @@ background: linear-gradient(3deg, rgba(121,185,103,1) 0%, rgba(105,183,113,1) 24
 }
 
 .button:hover {
-  background-color: green;
+  background-color: rgb(3, 52, 52);
   color: white;
 }
