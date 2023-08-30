@@ -1,9 +1,18 @@
+.background {
+  /* background-image: url('../assets/national_park.jpeg'); */
+  background-size: cover;
+  height: 90vh;
+  margin: 0;
+  background-color: rgb(3, 52, 52);
+}
+
 .container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  margin-top: 25px;
+  padding-top: 25px;
+
 }
 
 .form {

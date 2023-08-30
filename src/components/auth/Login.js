@@ -31,6 +31,7 @@ const Login = () => {
   };
 
   return (
+    <section className={classes.background}>
     <div className={classes.container}>
       <form className={classes.form} onSubmit={submitHandler}>
         <input
@@ -53,6 +54,8 @@ const Login = () => {
         Need to {register ? "Login" : "Sign Up"}?
       </button>
     </div>
+    </section>
+    
   );
 };
 

@@ -36,11 +36,12 @@ const ParkDetails = () => {
             backgroundSize: "cover",
           }}
         >
-      <div className={classes.about}>
-        <h2>{park.fullName}</h2>
-        <h3>{park.states}</h3>
-      </div>
-      </div>)}
+          <div className={classes.about}>
+            <h2>{park.fullName}</h2>
+            <h3>{park.states}</h3>
+          </div>
+        </div>
+      )}
       <p>{park.description}</p>
       <h4>Directions to the Park:</h4>
       <section className={classes.directions}>

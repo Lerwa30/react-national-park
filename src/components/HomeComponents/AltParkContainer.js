@@ -89,7 +89,7 @@ const AltParkContainer = ({ parks }) => {
       <div className={classes.searchbar}>
         {/* <FaSearch size="1em" id="search-icon" /> */}
         <select
-          className={classes.dropdown}  
+          className={classes.dropdown}
           value={selectedState}
           onChange={(e) => {
             setSelectedState(e.target.value);
