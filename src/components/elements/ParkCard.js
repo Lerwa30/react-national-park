@@ -9,6 +9,8 @@ const ParkCard = ({ park }) => {
     park.images[0] && park.images[0].url ? park.images[0].url : null; //allows test of images before container renders
 
   return (
+    <div className={classes.park_border}>
+
     <div className={classes.park_card}>
       <div className={classes.img_container}>
         {imageUrl ? (
@@ -29,6 +31,7 @@ const ParkCard = ({ park }) => {
         <Link to={`/details/${park.parkCode}`}>
           <button className={classes.button}>View Details</button>
         </Link>
+      </div>
       </div>
     </div>
   );
