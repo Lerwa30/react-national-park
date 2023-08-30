@@ -52,7 +52,7 @@ const Home = () => {
         <AltParkContainer parks={parks} />
         {/* <ParkContainer parks={parks} /> */}
         <div className={classes.container}>
-          <h2 style={{color: 'whitesmoke'}}>Park Spotlight:</h2>
+          <h2 style={{color: 'black', textDecoration: 'underline'}}>Park Spotlight</h2>
           <ParkCard park={randomPark} />
         </div>
       </div>

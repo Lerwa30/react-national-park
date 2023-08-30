@@ -42,13 +42,22 @@ const ParkDetails = () => {
           </div>
         </div>
       )}
-      <p>{park.description}</p>
-      <h4>Directions to the Park:</h4>
+      <div className={classes.info_container}>
+        <h4>About {park.name}</h4>
+        <p>{park.description}</p>
+      </div>
       <section className={classes.directions}>
+        <h4>Directions to the Park</h4>
         <p>{park.directionsInfo}</p>
         <a href={park.directionsUrl}>Click here for detailed NPS directions</a>
-      </section>
+
+        </section>      
+      <div className={classes.weather_container}>
+      <h4>Weather Info</h4>
       <p>{park.weatherInfo}</p>
+      </div>
+      <div className={classes.activities_container}>
+        <h4>Activities</h4>
       {park.activities === undefined ? (
         <span></span>
       ) : (
@@ -62,6 +71,7 @@ const ParkDetails = () => {
           })}
         </p>
       )}
+      </div>
     </div>
   );
 };
