@@ -6,7 +6,7 @@ import ParkDetails from "../elements/ParkDetails";
 import ParkContainer from "./ParkContainer";
 import AltParkContainer from "./AltParkContainer";
 import classes from "./ParkContainer.module.css";
-import pic from "../assets/yosemite_img.webp";
+import pic from "../assets/park_pic4.jpeg";
 
 const Home = () => {
   const [randomPark, setRandomPark] = useState({});
@@ -43,8 +43,8 @@ const Home = () => {
           style={{
             background: `linear-gradient(
           190deg,
-          rgba(0, 0, 0, 0.8),
-          rgba(0, 0, 0, 0.2)),
+          rgba(0, 0, 0, 0.3),
+          rgba(0, 0, 0, 0.1)),
           url(${pic})`,
             backgroundSize: "cover",
           }}

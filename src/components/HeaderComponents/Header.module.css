@@ -9,11 +9,13 @@ background-color: rgb(109, 146, 109);
     color: whitesmoke;
 }
 
-.name {
-   display: flex;
-   font-size: 26px;
-   margin-right: 50vw;
-   margin-left: 10px;
+.logo {
+    display: flex;
+    font-size: 16px;
+    margin-right: 50vw;
+    margin-left: 10px;
+    align-items: center;
+    gap: 10px;
 }
 
 .button {

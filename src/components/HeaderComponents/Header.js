@@ -2,6 +2,8 @@ import React from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import classes from "./Header.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMountain } from "@fortawesome/free-solid-svg-icons";
 
 const Header = () => {
   const logoutHandler = () => {
@@ -18,7 +20,11 @@ const Header = () => {
 
   return (
     <div className={classes.header}>
-      <h2 className={classes.name}>Park Finder</h2>
+      <div className={classes.logo}>
+        <h2>Park Finder</h2>
+      <FontAwesomeIcon icon={faMountain} />
+
+      </div>
       <Link to="/">
         <button className={classes.button}>Home</button>
       </Link>
