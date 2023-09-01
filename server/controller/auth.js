@@ -6,7 +6,7 @@ const bcrypt = require('bcryptjs');
 
 
 const createToken = (username, id) => {
-    return jwt.sign({ username, id }, SECRET, { expiresIn: '2 days'})
+    return jwt.sign({ username, id }, SECRET, { expiresIn: '1h'})
 }
 
 module.exports = {

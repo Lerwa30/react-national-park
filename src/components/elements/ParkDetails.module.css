@@ -18,6 +18,7 @@
     gap: 40px;
     padding: 50px;
     color: white;
+    
 } 
 
 .img {
@@ -30,10 +31,15 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-background-color: rgb(109, 146, 109);
-
+    background-color: rgb(109, 146, 109);
     margin: 20px;
-    padding: 10px;
+    padding: 20px;
+    width: 50%;
+    text-indent: 10px;
+    line-height: 1.5em;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+
 }
 
 h4 {
@@ -48,6 +54,11 @@ h4 {
     align-items: flex-start;
     padding: 10px;
     margin: 20px;
+    width: 50%;
+    text-indent: 10px;
+    line-height: 1.5em;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
 }
 
 .weather_container {
@@ -55,10 +66,14 @@ h4 {
     flex-direction: column;
     background-color: white;
 background-color: rgb(109, 146, 109);
-
     align-items: flex-start;
     padding: 10px;
     margin: 20px;
+    width: 50%;
+    text-indent: 10px;
+    line-height: 1.5em;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
 }
 
 .activities_container {
@@ -66,9 +81,10 @@ background-color: rgb(109, 146, 109);
     flex-direction: column;
     background-color: white;
     width: 300px;
-    align-items: center;
+    align-items: right;
     height: 100%;
     padding: 10px;
     margin: 20px;
-    border: solid 2px black;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
 }

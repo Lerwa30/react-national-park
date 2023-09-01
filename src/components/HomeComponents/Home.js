@@ -51,8 +51,8 @@ const Home = () => {
         ></div>
         <AltParkContainer parks={parks} />
         {/* <ParkContainer parks={parks} /> */}
+        <h2 style={{color: 'black', textDecoration: 'underline', textAlign: 'center'}}>Park Spotlight</h2>
         <div className={classes.container}>
-          <h2 style={{color: 'black', textDecoration: 'underline'}}>Park Spotlight</h2>
           <ParkCard park={randomPark} />
         </div>
       </div>

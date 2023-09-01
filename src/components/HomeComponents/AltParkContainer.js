@@ -16,7 +16,6 @@ const AltParkContainer = ({ parks }) => {
     "CT",
     "DE",
     "DC",
-    "FM",
     "FL",
     "GA",
     "GU",
@@ -67,7 +66,7 @@ const AltParkContainer = ({ parks }) => {
     "WY",
   ];
 
-  const [selectedState, setSelectedState] = useState(null);
+  const [selectedState, setSelectedState] = useState(false);
 
   console.log(parks);
 
@@ -98,7 +97,7 @@ const AltParkContainer = ({ parks }) => {
           <option value={null}>Find a National Park by State</option>
 
           {stateArr.map((state, index) => {
-            return <option value={state}>{state}</option>;
+            return <option key={index} value={state}>{state}</option>;
           })}
         </select>
       </div>
