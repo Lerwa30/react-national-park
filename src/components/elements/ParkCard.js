@@ -1,8 +1,33 @@
-import React from "react";
+import React, { useContext, useState } from "react";
+import axios from "axios";
 import classes from "./ParkCard.module.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
+import AuthContext from "../../authContext";
 
 const ParkCard = ({ park }) => {
+  const { token, userId } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  const [name, setName] = useState(park.fullName);
+  const [state, setState] = useState(park.state);
+  const [description, setDescription] = useState(park.description);
+  const [status, setStatus] = useState(true);
+
+  const likePark = (e) => {
+    e.preventDefault();
+
+    axios.post('/likes', {name, state, description, status, userId}, {
+      headers: {
+        authorization: token
+      }
+    })
+    .then(() => {
+      navigate('/profile')
+    })
+    .catch(err => console.log(err))
+  }
+
   console.log(park);
 
   const imageUrl =
@@ -30,6 +55,7 @@ const ParkCard = ({ park }) => {
           <Link to={`/details/${park.parkCode}`}>
             <button className={classes.button}>View Details</button>
           </Link>
+          <button className={classes.button} onClick={likePark}>Add Park to List</button>
         </div>
       </div>
     </div>

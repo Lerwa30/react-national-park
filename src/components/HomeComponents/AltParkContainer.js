@@ -97,7 +97,7 @@ const AltParkContainer = ({ parks }) => {
           <option value={null}>Find a National Park by State</option>
 
           {stateArr.map((state, index) => {
-            return <option key={index} value={state}>{state}</option>;
+            return <option key={state} value={state}>{state}</option>;
           })}
         </select>
       </div>

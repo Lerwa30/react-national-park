@@ -10,10 +10,9 @@ const Header = () => {
   const authContext = useContext(AuthContext);
 
   const handleLogout = () => {
-    localStorage.removeItem("token"); 
+    localStorage.removeItem("token");
     authContext.logout();
   };
-
 
   return (
     <header className={classes.header}>
@@ -21,29 +20,33 @@ const Header = () => {
         <h2>Park Finder</h2>
         <FontAwesomeIcon icon={faMountain} />
       </div>
-     
-      <nav>
-        { authContext.token ? (<div>
-      <Link to="/">
-        <button className={classes.button}>Home</button>
-      </Link>
-      <Link to="profile">
-        <button className={classes.button}>Profile</button>
-      </Link>
-      <button className={classes.button} onClick={handleLogout}>
-        Logout
-      </button> </div>) : ( <div>
-      <Link to="/">
-        <button className={classes.button}>Home</button>
-      </Link>
-      <Link to="profile">
-        <button className={classes.button}>Profile</button>
-      </Link>
-      <Link to="login">
-        <button className={classes.button}>Login/Register</button>
-      </Link>
-      </div>)
-                }
+
+      <nav className={classes.nav}>
+        {authContext.token ? (
+          <div className={classes.nav}>
+            <Link to="/">
+              <button className={classes.button}>Home</button>
+            </Link>
+            <Link to="profile">
+              <button className={classes.button}>Profile</button>
+            </Link>
+            <button className={classes.button} onClick={handleLogout}>
+              Logout
+            </button>{" "}
+          </div>
+        ) : (
+          <div className={classes.nav}>
+            <Link to="/">
+              <button className={classes.button}>Home</button>
+            </Link>
+            <Link to="profile">
+              <button className={classes.button}>Profile</button>
+            </Link>
+            <Link to="login">
+              <button className={classes.button}>Login/Register</button>
+            </Link>
+          </div>
+        )}
       </nav>
     </header>
   );

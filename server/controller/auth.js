@@ -44,12 +44,7 @@ module.exports = {
         try {
             localStorage.removeItem('authToken');
             res.status(200).send('Logged out successfully');
-
-            // const token = req.headers.authorization.split('')[1];
-            // const decodedToken = jwt.verify(token, SECRET);
-            // const userId = decodedToken.userId;
-            // await User.update({ token: null }, { where: { id: userId }});
-            // res.status(200).send('Logged out successfully');
+            
         } catch (err) {
             console.log('Error in logout');
             console.log(err)

@@ -53,7 +53,7 @@ const Home = () => {
         {/* <ParkContainer parks={parks} /> */}
         <h2 style={{color: 'black', textDecoration: 'underline', textAlign: 'center'}}>Park Spotlight</h2>
         <div className={classes.container}>
-          <ParkCard park={randomPark} />
+          <ParkCard park={randomPark}/>
         </div>
       </div>
     )

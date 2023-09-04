@@ -6,7 +6,8 @@ const cors = require('cors');
 const { sequelize } = require('./utility/database');
 const { User } = require('./models/user');
 const { isAuthenticated } = require('./middleware/isAuthenticated');
-const { login, register, logout } = require('./controller/auth')
+const { login, register, logout } = require('./controller/auth');
+const { likePark, getLikedParks } = require('./controller/likes');
 
 const app = express();
 
@@ -16,6 +17,10 @@ app.use(cors());
 app.post('/register', register);
 app.post('/login', login);
 app.delete('/logout', logout);
+
+app.post('/likes', likePark);
+app.get('/userlikes/:userId', getLikedParks);
+
 
 const { PORT } = process.env
 
