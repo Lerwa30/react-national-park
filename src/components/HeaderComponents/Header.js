@@ -39,9 +39,6 @@ const Header = () => {
             <Link to="/">
               <button className={classes.button}>Home</button>
             </Link>
-            <Link to="profile">
-              <button className={classes.button}>Profile</button>
-            </Link>
             <Link to="login">
               <button className={classes.button}>Login/Register</button>
             </Link>

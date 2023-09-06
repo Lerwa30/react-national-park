@@ -17,7 +17,6 @@ module.exports = {
     getLikedParks: async (req, res) => {
         try {
             const {userId} = req.params
-            console.log('Received userId:', userId);
             const likes = await Likes.findAll({
                 where: {userId: userId},
                 include: [{

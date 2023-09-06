@@ -13,3 +13,5 @@ module.exports = {
         hashedPass: DataTypes.STRING
     })
 }
+
+// User.hasMany(Likes);

@@ -81,7 +81,6 @@ const AltParkContainer = ({ parks }) => {
       return <ParkCard park={park} />;
     });
 
-  console.log(selectedState);
 
   return (
     <section className={classes.section}>

@@ -7,8 +7,17 @@ module.exports = {
             type: DataTypes.INTEGER,
             autoIncrement: true,
             allowNull: false,
-            primaryKey: true
+            primaryKey: true,
+            
         },
+        // userId: {
+        //     allowNull: true,
+        //     type: DataTypes.INTEGER,
+        //     references: {
+        //         model: 'user',
+        //         key: 'id'
+        //     }
+        // },
         name: DataTypes.STRING,
         state: DataTypes.STRING,
         description: DataTypes.TEXT,
@@ -16,3 +25,6 @@ module.exports = {
 
     })
 }
+
+
+
