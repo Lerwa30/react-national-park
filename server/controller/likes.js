@@ -30,5 +30,16 @@ module.exports = {
             console.log(error)
             res.sendStatus(400)
         }
+    },
+
+    deleteLike: async (req, res) => {
+        try {
+            const {id} = req.params
+            await Likes.destroy({where: {id: +id}})
+            res.sendStatus(200)
+        } catch (error) {
+            console.group(error)
+            res.sendStatus(400)
+        }
     }
 }

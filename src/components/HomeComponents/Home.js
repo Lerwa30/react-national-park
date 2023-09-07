@@ -53,8 +53,12 @@ const Home = () => {
         {/* <ParkContainer parks={parks} /> */}
         <h2 style={{color: 'black', textDecoration: 'underline', textAlign: 'center'}}>Park Spotlight</h2>
         <div className={classes.container}>
-          <ParkCard park={randomPark}/>
+          <ParkCard park={randomPark} />
         </div>
+        <footer>
+          <a target='_blank' href='https://github.com/Lerwa30'>Created by Leroy P</a><br></br>
+          <a target='_blank' href='https://www.nps.gov/subjects/developer/index.htm'>Powered by the National Park API</a>
+        </footer>
       </div>
     )
   );

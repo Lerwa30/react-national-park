@@ -7,7 +7,7 @@ const { sequelize } = require('./utility/database');
 const { User } = require('./models/user');
 const { isAuthenticated } = require('./middleware/isAuthenticated');
 const { login, register, logout } = require('./controller/auth');
-const { likePark, getLikedParks } = require('./controller/likes');
+const { likePark, getLikedParks, deleteLike } = require('./controller/likes');
 const { Likes } = require('./models/likedParks');
 
 const app = express();
@@ -24,6 +24,7 @@ app.delete('/logout', logout);
 
 app.post('/likes', likePark);
 app.get('/userlikes/:userId', getLikedParks);
+app.delete('/likes/:id', deleteLike);
 
 
 const { PORT } = process.env

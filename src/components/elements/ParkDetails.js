@@ -47,6 +47,9 @@ const ParkDetails = () => {
       <section className={classes.info_container}>
         <h4>About {park.name}</h4>
         <p>{park.description}</p>
+        <a href={park.url}>
+        Click to view more details about {park.name} from the NPS website.
+      </a>
       </section>
       <section className={classes.directions}>
         <h4>Directions to the Park</h4>
@@ -66,15 +69,15 @@ const ParkDetails = () => {
         {park.activities === undefined ? (
           <span></span>
         ) : (
-          <p>
-            {park.activities.map((item) => {
+          <h5>
+            {park.activities.map((item, index) => {
               return (
-                <ul>
-                  <li>{item.name}</li>
+                <ul key={index}>
+                  <li key={index}>{item.name}</li>
                 </ul>
               );
             })}
-          </p>
+          </h5>
         )}
       </section>
       </div>

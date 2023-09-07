@@ -41,3 +41,10 @@
   margin: 0;
   padding: 0;
 }
+
+footer {
+  display: flex;
+  padding: 30px;
+  font-size: 15px;
+  justify-content: space-between;
+}

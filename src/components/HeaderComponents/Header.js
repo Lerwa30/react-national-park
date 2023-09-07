@@ -28,7 +28,7 @@ const Header = () => {
               <button className={classes.button}>Home</button>
             </Link>
             <Link to="profile">
-              <button className={classes.button}>Profile</button>
+              <button className={classes.button}>My Park List</button>
             </Link>
             <button className={classes.button} onClick={handleLogout}>
               Logout
