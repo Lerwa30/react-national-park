@@ -1,8 +1,9 @@
 import axios from 'axios';
 import { useContext, useEffect, useState } from 'react';
-import AuthContext from "../authContext";
+import AuthContext from "../../authContext";
+import { Link } from 'react-router-dom';
 
-const Profile = () => {
+const Profile = ({park}) => {
     const { userId } = useContext(AuthContext);
     const [likedParks, setLikedParks] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -20,13 +21,14 @@ const Profile = () => {
             });
     }, [userId]);
 
-    const mappedLikes = likedParks.map(park => {
-        <div key={park.id}>
-            <h2>{park.name}</h2>
-            {/* <h3>{park.state}</h3> */}
-            <p>{park.description}</p>
+    const arr = Object.values(likedParks);
+    const mappedLikes = arr.map(item => {
+        return(
+        <div key={item.id}>
+            <h2>{item.name}</h2>
+        
         </div>
-});
+)});
 
     return (
         <div>

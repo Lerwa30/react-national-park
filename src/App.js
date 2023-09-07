@@ -6,7 +6,7 @@ import classes from './App.module.css';
 import AuthContext from "./authContext";
 import Header from "./components/HeaderComponents/Header";
 import Home from "./components/HomeComponents/Home";
-import Profile from "./components/Profile";
+import Profile from "./components/elements/Profile";
 import Login from "./components/auth/Login";
 import ParkDetails from "./components/elements/ParkDetails";
 

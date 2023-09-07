@@ -42,20 +42,26 @@ const ParkDetails = () => {
           </div>
         </div>
       )}
-      <div className={classes.info_container}>
+      <div className={classes.display}>
+      <div className={classes.test}>
+      <section className={classes.info_container}>
         <h4>About {park.name}</h4>
         <p>{park.description}</p>
-      </div>
+      </section>
       <section className={classes.directions}>
         <h4>Directions to the Park</h4>
         <p>{park.directionsInfo}</p>
         <a href={park.directionsUrl}>Click here for detailed NPS directions</a>
       </section>
-      <div className={classes.weather_container}>
+      <section className={classes.weather_container}>
         <h4>Weather Info</h4>
         <p>{park.weatherInfo}</p>
+      </section>
       </div>
-      <div className={classes.activities_container}>
+      <div className={classes.test}>
+      </div> 
+
+      <section className={classes.activities_container}>
         <h4>Activities</h4>
         {park.activities === undefined ? (
           <span></span>
@@ -70,6 +76,7 @@ const ParkDetails = () => {
             })}
           </p>
         )}
+      </section>
       </div>
     </div>
   );
