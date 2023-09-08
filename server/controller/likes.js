@@ -4,8 +4,8 @@ const { Likes } = require('../models/likedParks');
 module.exports = {
     likePark: async (req, res) => {
         try {
-            const { name, state, description, status, userId} = req.body
-            await Likes.create({name, state, description, privateStatus: status, userId})
+            const { name, states, description, status, userId} = req.body
+            await Likes.create({name, states, description, privateStatus: status, userId})
             res.sendStatus(200);
         } catch (error) {
             console.log('ERROR IN getLikedParks')

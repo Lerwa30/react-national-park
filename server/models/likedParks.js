@@ -10,16 +10,8 @@ module.exports = {
             primaryKey: true,
             
         },
-        // userId: {
-        //     allowNull: true,
-        //     type: DataTypes.INTEGER,
-        //     references: {
-        //         model: 'user',
-        //         key: 'id'
-        //     }
-        // },
         name: DataTypes.STRING,
-        state: DataTypes.STRING,
+        states: DataTypes.STRING,
         description: DataTypes.TEXT,
         privateStatus: DataTypes.BOOLEAN
 

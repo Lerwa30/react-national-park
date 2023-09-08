@@ -49,10 +49,14 @@ const Profile = () => {
     const arr = Object.values(likedParks);
     const mappedLikes = arr.map(item => {
         return(
+        <div>  
         <div key={item.id}>
-            <h2>{item.name}</h2>
-            <button onClick={() => deleteLike(item.id)}>x</button>
+            <h3>{item.name}, {item.states}</h3>
         </div>
+        <div className={classes.btn}>
+        <button onClick={() => deleteLike(item.id)}>Remove Park</button>
+        </div>
+        </div>  
 )});
 
     return (

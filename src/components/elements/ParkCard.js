@@ -10,14 +10,14 @@ const ParkCard = ({ park }) => {
   const navigate = useNavigate();
 
   const [name, setName] = useState(park.fullName);
-  const [state, setState] = useState(park.state);
+  const [states, setStates] = useState(park.states);
   const [description, setDescription] = useState(park.description);
   const [status, setStatus] = useState(true);
 
   const likePark = (e) => {
     e.preventDefault();
 
-    axios.post('/likes', {name, state, description, status, userId}, {
+    axios.post('/likes', {name, states, description, status, userId}, {
       headers: {
         authorization: token
       }
