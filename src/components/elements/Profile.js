@@ -1,7 +1,6 @@
 import axios from 'axios';
 import { useContext, useEffect, useState } from 'react';
 import AuthContext from "../../authContext";
-import { Link } from 'react-router-dom';
 import classes from './Profile.module.css';
 
 const Profile = () => {

@@ -2,8 +2,6 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 import ParkCard from "../elements/ParkCard";
-import ParkDetails from "../elements/ParkDetails";
-import ParkContainer from "./ParkContainer";
 import AltParkContainer from "./AltParkContainer";
 import classes from "./ParkContainer.module.css";
 import pic from "../assets/park_pic4.jpeg";

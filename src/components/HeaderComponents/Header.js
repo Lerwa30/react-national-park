@@ -17,7 +17,7 @@ const Header = () => {
   return (
     <header className={classes.header}>
       <div className={classes.logo}>
-        <h2>Park Finder</h2>
+        <h2>Park Scout</h2>
         <FontAwesomeIcon icon={faMountain} />
       </div>
 
@@ -30,9 +30,11 @@ const Header = () => {
             <Link to="profile">
               <button className={classes.button}>My Park List</button>
             </Link>
-            <button className={classes.button} onClick={handleLogout}>
-              Logout
-            </button>{" "}
+            <Link to="/">
+              <button className={classes.button} onClick={handleLogout}>
+                Logout
+              </button>{" "}
+            </Link>
           </div>
         ) : (
           <div className={classes.nav}>
